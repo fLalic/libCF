@@ -2,7 +2,6 @@ template<int mod=1e9+7>
 struct modint{
     int val;
 
-    modint(): val(0) {}
     modint(long long v=0){
 	val=v;
 	if(val<0) val+=mod;
