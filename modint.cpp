@@ -3,7 +3,7 @@ struct modint{
     int val;
 
     modint(long long v=0){
-	val=v;
+	val=v%mod;
 	if(val<0) val+=mod;
     }
 
@@ -41,6 +41,13 @@ struct modint{
     friend modint inv(modint a){ return expo(a, mod-2); }
 
     modint& operator^= (long long e){
+	if(!e){
+	    val = 1;
+	    return *this;
+	}
+
+	e--;
+
 	long long pot=val;
 	while(e){
 	    if(e&1ll)
@@ -78,3 +85,4 @@ struct modint{
 	return out << a.val;
     }
 };
+
