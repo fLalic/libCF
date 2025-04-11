@@ -38,7 +38,7 @@ struct Treap{
 	    return a;
 	}
 	else{
-	    b->c[0] = merge(b->c[0], a);
+	    b->c[0] = merge(a, b->c[0]);
 	    return b;
 	}
     }
