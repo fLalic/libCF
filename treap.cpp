@@ -28,6 +28,11 @@ struct Treap{
     }
 
     tNode* merge(tNode* a, tNode* b){
+	if(!a)
+	    return b;
+	else if(!b)
+	    return a;
+
 	if(a->pri > b->pri){
 	    a->c[1] = merge(a->c[1], b);
 	    return a;
